@@ -18,3 +18,5 @@
 * [Bat script](bat-script/README.md)
   * [Get started](bat-script/get-started.md)
   * [useful bat scripts](bat-script/useful-bat-scripts.md)
+* [Regex](regex/README.md)
+  * [Page 1](regex/page-1.md)
