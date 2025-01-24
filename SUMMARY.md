@@ -16,4 +16,5 @@
   * [116 Useful Excel Macro \[VBA\]](visual-basic-for-applications/116-useful-excel-macro-vba.md)
   * [Word Macro Examples & VBA Tutorial](visual-basic-for-applications/word-macro-examples-and-vba-tutorial.md)
 * [Bat script](bat-script/README.md)
+  * [Get started](bat-script/get-started.md)
   * [useful bat scripts](bat-script/useful-bat-scripts.md)
