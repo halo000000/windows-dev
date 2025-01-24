@@ -8,3 +8,9 @@
   * [Events in Windows Forms](windows-application/windows-form/events-in-windows-forms.md)
   * [Binding Data to Controls](windows-application/windows-form/binding-data-to-controls.md)
   * [Deploying Your Windows Forms](windows-application/windows-form/deploying-your-windows-forms.md)
+
+***
+
+* [Visual Basic for Applications](visual-basic-for-applications/README.md)
+  * [VBA basics](visual-basic-for-applications/vba-basics.md)
+  * [116 Useful Excel Macro \[VBA\]](visual-basic-for-applications/116-useful-excel-macro-vba.md)
