@@ -1,11 +1,10 @@
 # Table of contents
 
-* [Page 1](README.md)
+## windows application
 
-## windows form
-
-* [Get started](windows-form/get-started.md)
-* [Forms Controls](windows-form/forms-controls.md)
-* [Events in Windows Forms](windows-form/events-in-windows-forms.md)
-* [Binding Data to Controls](windows-form/binding-data-to-controls.md)
-* [Deploying Your Windows Forms](windows-form/deploying-your-windows-forms.md)
+* [windows form](README.md)
+  * [Get started](windows-application/windows-form/get-started.md)
+  * [Forms Controls](windows-application/windows-form/forms-controls.md)
+  * [Events in Windows Forms](windows-application/windows-form/events-in-windows-forms.md)
+  * [Binding Data to Controls](windows-application/windows-form/binding-data-to-controls.md)
+  * [Deploying Your Windows Forms](windows-application/windows-form/deploying-your-windows-forms.md)
