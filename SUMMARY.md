@@ -14,3 +14,4 @@
 * [Visual Basic for Applications](visual-basic-for-applications/README.md)
   * [VBA basics](visual-basic-for-applications/vba-basics.md)
   * [116 Useful Excel Macro \[VBA\]](visual-basic-for-applications/116-useful-excel-macro-vba.md)
+  * [Word Macro Examples & VBA Tutorial](visual-basic-for-applications/word-macro-examples-and-vba-tutorial.md)

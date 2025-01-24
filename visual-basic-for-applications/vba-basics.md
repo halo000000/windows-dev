@@ -1,6 +1,6 @@
 ---
+icon: file-binary
 description: A Comprehensive Guide to Learning VBA (Visual Basic for Applications)
-icon: file-xls
 ---
 
 # VBA basics
