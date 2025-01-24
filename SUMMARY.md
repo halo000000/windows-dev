@@ -19,4 +19,4 @@
   * [Get started](bat-script/get-started.md)
   * [useful bat scripts](bat-script/useful-bat-scripts.md)
 * [Regex](regex/README.md)
-  * [Page 1](regex/page-1.md)
+  * [100 regex](regex/100-regex.md)

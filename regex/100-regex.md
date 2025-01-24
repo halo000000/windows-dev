@@ -1,4 +1,8 @@
-# Page 1
+---
+icon: codepen
+---
+
+# 100 regex
 
 Sure! Here’s a list of useful regular expressions (regex) with their code and explanations. These are practical regex patterns that you can use in many scenarios, from validating user input to extracting data.
 
