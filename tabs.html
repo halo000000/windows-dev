@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Tabs -->
+        <div class="flex border-b">
+            <button class="tab-link px-4 py-2 text-gray-600 hover:bg-gray-200" data-tab="tab1">Text</button>
+            <button class="tab-link px-4 py-2 text-gray-600 hover:bg-gray-200" data-tab="tab2">Second Tab</button>
+            <button class="tab-link px-4 py-2 text-gray-600 hover:bg-gray-200" data-tab="tab3">this is another tab</button>
+            <button class="tab-link px-4 py-2 text-gray-600 hover:bg-gray-200" data-tab="tab4">this is another tab</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tab1" class="tab-content p-4">
+            <p>this is very important</p>
+            <p>1</p>
+            <p>make this</p>
+        </div>
+        <div id="tab2" class="tab-content p-4 hidden">
+            <p>do your thing</p>
+            <p>2</p>
+            <p>this to hhisdhi</p>
+        </div>
+        <div id="tab3" class="tab-content p-4 hidden">
+            <p>what is this ?</p>
+            <p>this is a very important issue we need to fix</p>
+        </div>
+        <div id="tab4" class="tab-content p-4 hidden">
+            <p>this is a very important issue we need to fix</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle tab switching
+        document.querySelectorAll('.tab-link').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

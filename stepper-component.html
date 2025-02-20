@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stepper Component</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="container mx-auto py-8">
+    <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+      <ol class="space-y-4" id="stepper">
+        <li>
+          <div class="font-medium">make this</div>
+          <div class="text-gray-400">this is very important</div>
+        </li>
+        <li>
+          <div class="font-medium">do your thing</div>
+          <div class="text-gray-400">this fo thishdi</div>
+        </li>
+        <li>
+          <div class="font-medium">do your thing</div>
+          <div class="text-gray-400">this fo thishdi</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    // Stepper functionality
+    const stepper = document.getElementById('stepper');
+    const stepItems = stepper.getElementsByTagName('li');
+    let currentStep = 0;
+
+    function updateStepStyles() {
+      for (let i = 0; i < stepItems.length; i++) {
+        if (i <= currentStep) {
+          stepItems[i].querySelector('.font-medium').classList.add('text-white');
+          stepItems[i].querySelector('.text-gray-400').classList.remove('text-gray-400');
+        } else {
+          stepItems[i].querySelector('.font-medium').classList.remove('text-white');
+          stepItems[i].querySelector('.text-gray-400').classList.add('text-gray-400');
+        }
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < stepItems.length - 1) {
+        currentStep++;
+        updateStepStyles();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        updateStepStyles();
+      }
+    }
+
+    // Add click event listeners to the steps
+    for (let i = 0; i < stepItems.length; i++) {
+      stepItems[i].addEventListener('click', () => {
+        currentStep = i;
+        updateStepStyles();
+      });
+    }
+  </script>
+</body>
+</html>

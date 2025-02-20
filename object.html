@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<object data="./all-javascript.pdf" height="800" width="500" >
+
+
+</object>
+
+
+
+<div id="pdf-viewer"></div>
+
+<script>
+  const url = "./all-javascript.pdf"; // Path to your PDF file
+  const pdfViewer = document.getElementById("pdf-viewer");
+
+  // Load the PDF.js worker
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+
+  // Fetch and render the PDF
+  pdfjsLib.getDocument(url).promise.then(pdf => {
+    const totalPages = pdf.numPages;
+    console.log(`Total Pages: ${totalPages}`);
+
+    // Render each page
+    for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+      pdf.getPage(pageNum).then(page => {
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        // Create canvas element for each page
+        const canvas = document.createElement("canvas");
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        pdfViewer.appendChild(canvas);
+
+        // Render the page on the canvas
+        const context = canvas.getContext("2d");
+        page.render({
+          canvasContext: context,
+          viewport: viewport
+        });
+      }).catch(err => {
+        console.error(`Error rendering page ${pageNum}:`, err);
+      });
+    }
+  }).catch(err => {
+    console.error("Error loading PDF:", err);
+  });
+</script>
+
+<style>
+    #svg-container {
+      user-select: text;
+      -webkit-user-select: text; /* For Safari */
+      -ms-user-select: text; /* For old versions of IE */
+    }
+  </style>
+
+
+<div id="svg-container"></div>
+
+<script>
+  const svgFilePath = './Screen.svg'; // Path to your SVG file
+  fetch(svgFilePath)
+    .then(response => response.text())
+    .then(svgContent => {
+      document.getElementById('svg-container').innerHTML = svgContent;
+    })
+    .catch(err => console.error('Failed to load SVG:', err));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<canvas id="svg-canvas" width="500" height="500"></canvas>
+
+  <script>
+    const canvas = document.getElementById('svg-canvas');
+    const ctx = canvas.getContext('2d');
+    const svgPath = './Screen.svg';
+
+    fetch(svgPath)
+      .then(response => response.text())
+      .then(svgContent => {
+        const img = new Image();
+        const svgBlob = new Blob([svgContent], { type: 'image/svg+xml' });
+        const url = URL.createObjectURL(svgBlob);
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          URL.revokeObjectURL(url);
+        };
+        img.src = url;
+      })
+      .catch(err => console.error('Failed to load SVG:', err));
+  </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

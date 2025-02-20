@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube UI Components</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="container mx-auto py-8">
+    <!-- YouTube Header -->
+    <header class="bg-gray-800 py-4 shadow-lg">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="/api/placeholder/40/40" alt="YouTube" class="h-8 mr-4">
+          <h1 class="text-lg font-bold">YouTube</h1>
+        </div>
+        <!-- <div class="flex items-center">
+          <input type="text" placeholder="Search" class="bg-gray-700 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="bg-gray-700 rounded-full px-4 py-2 ml-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div> -->
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="flex mt-8">
+      <div class="bg-gray-800 rounded-lg shadow-lg flex-1">
+        <div class="flex" id="tabs">
+          <div class="px-4 py-2 bg-gray-700 rounded-t-lg font-medium" id="firstTab">First Tab</div>
+          <div class="px-4 py-2 text-gray-400 hover:text-white cursor-pointer" id="secondTab">Second Tab</div>
+        </div>
+        <div class="p-4" id="tabContent">this is another tab</div>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="mt-8 bg-gray-800 rounded-lg shadow-lg p-4">
+      <ol class="space-y-4">
+        <li>
+          <div class="font-medium">make this</div>
+          <div class="text-gray-400">this is very important</div>
+        </li>
+        <li>
+          <div class="font-medium">do your thing</div>
+          <div class="text-gray-400">this fo thishdi</div>
+        </li>
+      </ol>
+      <div class="bg-gray-700 rounded-lg p-4 mt-4">
+        <div class="flex justify-between items-center">
+          <div class="font-medium">what is this ?</div>
+          <div class="text-gray-400">this is a very important issue we need to fix</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="flex justify-between items-center mt-8">
+      <button class="bg-gray-800 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="prevBtn">
+        <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <div class="text-gray-400" id="pageCount">100 pages</div>
+      <div class="text-gray-400" id="lastModified">Last modified now</div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    const firstTab = document.getElementById('firstTab');
+    const secondTab = document.getElementById('secondTab');
+    const tabContent = document.getElementById('tabContent');
+
+    firstTab.addEventListener('click', () => {
+      firstTab.classList.add('bg-gray-700');
+      firstTab.classList.remove('text-gray-400');
+      secondTab.classList.remove('bg-gray-700');
+      secondTab.classList.add('text-gray-400');
+      tabContent.textContent = 'this is another tab';
+    });
+
+    secondTab.addEventListener('click', () => {
+      secondTab.classList.add('bg-gray-700');
+      secondTab.classList.remove('text-gray-400');
+      firstTab.classList.remove('bg-gray-700');
+      firstTab.classList.add('text-gray-400');
+      tabContent.textContent = 'this is the second tab';
+    });
+
+    // Previous button functionality
+    const prevBtn = document.getElementById('prevBtn');
+    const pageCount = document.getElementById('pageCount');
+    let currentPage = 100;
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        pageCount.textContent = `${currentPage} pages`;
+      }
+    });
+  </script>
+</body>
+</html>

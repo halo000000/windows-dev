@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Inter', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Custom animations */
+        @keyframes arrowTail {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        .group:hover .arrow-tail {
+            animation: arrowTail 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-body">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-heading font-bold">BlogName</div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hover:text-blue-600 transition">Home</a>
+                <a href="#" class="hover:text-blue-600 transition">Categories</a>
+                <a href="#" class="hover:text-blue-600 transition">About</a>
+                <input type="text" placeholder="Search..." class="border-b border-gray-300 focus:border-blue-500 transition outline-none">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen text-white">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/api/placeholder/1920/1080')"></div>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 container mx-auto flex flex-col justify-center h-full text-center">
+            <h1 class="text-6xl font-heading font-bold mb-4">Inspiring Stories, Curated Content</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Discover thought-provoking articles that spark curiosity and creativity.</p>
+            <div class="group inline-block">
+                <a href="#featured" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition relative">
+                    Explore Posts
+                    <span class="absolute bottom-0 left-0 h-0.5 bg-white arrow-tail hidden group-hover:block"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Posts -->
+    <section id="featured" class="container mx-auto py-16">
+        <h2 class="text-4xl font-heading font-bold text-center mb-12">Featured Posts</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Post Card -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden group">
+                <img src="/api/placeholder/600/400" alt="Post Image" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h3 class="text-2xl font-heading font-bold mb-4">Post Title</h3>
+                    <p class="text-gray-600 mb-4">Short description of the blog post...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">Read More →</a>
+                </div>
+            </div>
+            <!-- Repeat for two more post cards -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden group">
+                <img src="/api/placeholder/600/400" alt="Post Image" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h3 class="text-2xl font-heading font-bold mb-4">Post Title</h3>
+                    <p class="text-gray-600 mb-4">Short description of the blog post...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">Read More →</a>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden group">
+                <img src="/api/placeholder/600/400" alt="Post Image" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <h3 class="text-2xl font-heading font-bold mb-4">Post Title</h3>
+                    <p class="text-gray-600 mb-4">Short description of the blog post...</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-heading font-bold text-xl mb-4">About Us</h4>
+                <p class="text-gray-600">A blog dedicated to sharing inspiring and thoughtful content.</p>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-xl mb-4">Newsletter</h4>
+                <form class="flex">
+                    <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-2 border rounded-l-lg">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition">Subscribe</button>
+                </form>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-xl mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Twitter</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Instagram</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-gray-500">
+            © 2024 Blog Name. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Navigation
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

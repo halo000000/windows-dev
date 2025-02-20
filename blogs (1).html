@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Modern Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full bg-white z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="text-3xl font-bold">W.</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">New</a>
+                    <a href="blogs.html" class="text-gray-900 font-semibold">Blogs</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Trending</a>
+                    <a href="categories.html" class="text-gray-600 hover:text-gray-900">Categories</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-6xl font-bold mb-6 tracking-tight">Our Blog Posts</h1>
+            <p class="text-2xl text-gray-600 max-w-3xl">Discover the latest insights, tutorials, and thought pieces from our expert writers.</p>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap gap-4 mb-12 items-center justify-between">
+                <div class="flex gap-4">
+                    <button class="px-6 py-3 bg-gray-900 text-white text-lg font-bold">All Posts</button>
+                    <button class="px-6 py-3 bg-white text-gray-600 text-lg font-bold hover:bg-gray-100">Latest</button>
+                    <button class="px-6 py-3 bg-white text-gray-600 text-lg font-bold hover:bg-gray-100">Popular</button>
+                </div>
+                <div class="relative">
+                    <input type="search" placeholder="Search posts..." class="pl-10 pr-4 py-3 border-2 border-gray-300 text-lg w-72">
+                    <svg class="w-6 h-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Blog Card 1 -->
+                <article class="blog-card">
+                    <img src="/placeholder.svg?height=600&width=800" alt="Blog post" class="w-full h-96 object-cover mb-6">
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">The Future of Decentralized Web</h2>
+                    <p class="text-xl text-gray-600 mb-4">Exploring the possibilities and challenges of Web 3.0 technology and its impact on the future of the internet.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Author" class="w-12 h-12 rounded-full">
+                            <span class="text-lg">John Doe</span>
+                        </div>
+                        <span class="text-lg text-gray-500">5 min read</span>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card">
+                    <img src="/placeholder.svg?height=600&width=800" alt="Blog post" class="w-full h-96 object-cover mb-6">
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">AI in Modern Development</h2>
+                    <p class="text-xl text-gray-600 mb-4">How artificial intelligence is reshaping software development and transforming the tech industry landscape.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Author" class="w-12 h-12 rounded-full">
+                            <span class="text-lg">Jane Smith</span>
+                        </div>
+                        <span class="text-lg text-gray-500">8 min read</span>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card">
+                    <img src="/placeholder.svg?height=600&width=800" alt="Blog post" class="w-full h-96 object-cover mb-6">
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">The Rise of No-Code Platforms</h2>
+                    <p class="text-xl text-gray-600 mb-4">Exploring how no-code solutions are democratizing app development and empowering non-technical creators.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Author" class="w-12 h-12 rounded-full">
+                            <span class="text-lg">Alex Johnson</span>
+                        </div>
+                        <span class="text-lg text-gray-500">6 min read</span>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card">
+                    <img src="/placeholder.svg?height=600&width=800" alt="Blog post" class="w-full h-96 object-cover mb-6">
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">Cybersecurity in the IoT Era</h2>
+                    <p class="text-xl text-gray-600 mb-4">Addressing the unique challenges and solutions for securing the growing Internet of Things ecosystem.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Author" class="w-12 h-12 rounded-full">
+                            <span class="text-lg">Emily Chen</span>
+                        </div>
+                        <span class="text-lg text-gray-500">7 min read</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-16 gap-2">
+                <button class="px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100">&larr; Previous</button>
+                <button class="px-6 py-3 bg-gray-900 text-white text-lg font-bold">1</button>
+                <button class="px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100">2</button>
+                <button class="px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100">3</button>
+                <button class="px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100">Next &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-bold mb-6">Subscribe to our newsletter</h4>
+                    <form class="flex gap-4">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 text-lg border-2 border-gray-300">
+                        <button type="submit" class="px-8 py-3 bg-gray-900 text-white text-lg font-bold hover:bg-gray-800">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="md:text-right">
+                    <div class="flex md:justify-end gap-8 mb-8">
+                        <a href="#" class="text-xl hover:text-gray-600">Twitter</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Facebook</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Instagram</a>
+                    </div>
+                    <p class="text-lg text-gray-600">&copy; 2024 Modern Blog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('button');
+        const nav = document.querySelector('nav div div:nth-child(2)');
+        
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('items-start');
+            nav.classList.toggle('space-y-4');
+        });
+    </script>
+</body>
+</html>
+

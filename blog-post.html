@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - Modern Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full bg-white z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="text-3xl font-bold">W.</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">New</a>
+                    <a href="blogs.html" class="text-gray-900 font-semibold">Blogs</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Trending</a>
+                    <a href="categories.html" class="text-gray-600 hover:text-gray-900">Categories</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <!-- Blog Header -->
+            <header class="mb-12">
+                <h1 class="text-5xl font-bold mb-6 leading-tight">The Future of Decentralized Web: Exploring Web 3.0</h1>
+                <div class="flex items-center justify-between text-gray-600">
+                    <div class="flex items-center gap-4">
+                        <img src="/placeholder.svg?height=80&width=80" alt="Author" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold">John Doe</p>
+                            <p>Web3 Enthusiast</p>
+                        </div>
+                    </div>
+                    <p>Published on May 15, 2024</p>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <img src="/placeholder.svg?height=600&width=1200" alt="Featured image for the blog post" class="w-full h-96 object-cover mb-12">
+
+            <!-- Blog Content -->
+            <div class="prose prose-lg max-w-none">
+                <p class="text-xl leading-relaxed mb-8">
+                    Web 3.0, often referred to as the decentralized web, represents the next evolution of the internet. It promises to reshape how we interact with digital services, manage our data, and conduct transactions online. In this article, we'll explore the key concepts behind Web 3.0 and its potential impact on our digital future.
+                </p>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">What is Web 3.0?</h2>
+                <p class="text-xl leading-relaxed mb-8">
+                    Web 3.0 is built on the principles of decentralization, openness, and greater user utility. Unlike its predecessors, Web 3.0 aims to give users more control over their data and digital identities. It leverages blockchain technology, cryptocurrencies, and token-based economics to create a more transparent and user-centric internet.
+                </p>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">Key Features of Web 3.0</h2>
+                <ul class="list-disc pl-6 mb-8 text-xl">
+                    <li class="mb-4">Decentralization: Moving away from centralized servers to distributed networks.</li>
+                    <li class="mb-4">Trustless and Permissionless: Allowing interactions without intermediaries.</li>
+                    <li class="mb-4">AI and Machine Learning: Enhanced data processing and user experience.</li>
+                    <li class="mb-4">Semantic Web: Improved understanding of content meaning and context.</li>
+                </ul>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">Challenges and Opportunities</h2>
+                <p class="text-xl leading-relaxed mb-8">
+                    While Web 3.0 presents exciting possibilities, it also faces challenges in terms of scalability, user adoption, and regulatory frameworks. However, the potential for creating more equitable digital ecosystems and empowering users makes it a compelling vision for the future of the internet.
+                </p>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">Conclusion</h2>
+                <p class="text-xl leading-relaxed mb-8">
+                    As we stand on the brink of this new era, it's clear that Web 3.0 has the potential to revolutionize our online experiences. By embracing decentralization and user empowerment, we can create a more open, secure, and innovative digital world.
+                </p>
+            </div>
+
+            <!-- Author Bio -->
+            <div class="mt-16 p-8 bg-gray-100 rounded-lg">
+                <div class="flex items-center gap-6">
+                    <img src="/placeholder.svg?height=120&width=120" alt="John Doe" class="w-24 h-24 rounded-full">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">John Doe</h3>
+                        <p class="text-lg text-gray-600 mb-4">John is a Web3 enthusiast and blockchain developer with over 5 years of experience in the crypto space. He's passionate about decentralized technologies and their potential to reshape the digital landscape.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-blue-600 hover:underline">Twitter</a>
+                            <a href="#" class="text-blue-600 hover:underline">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold mb-8">Related Posts</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a href="#" class="block group">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Related post" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold group-hover:underline">Understanding Blockchain Technology</h3>
+                    </a>
+                    <a href="#" class="block group">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Related post" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold group-hover:underline">The Rise of DeFi: Decentralized Finance Explained</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-bold mb-6">Subscribe to our newsletter</h4>
+                    <form class="flex gap-4">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 text-lg border-2 border-gray-300">
+                        <button type="submit" class="px-8 py-3 bg-gray-900 text-white text-lg font-bold hover:bg-gray-800">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="md:text-right">
+                    <div class="flex md:justify-end gap-8 mb-8">
+                        <a href="#" class="text-xl hover:text-gray-600">Twitter</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Facebook</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Instagram</a>
+                    </div>
+                    <p class="text-lg text-gray-600">&copy; 2024 Modern Blog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('button');
+        const nav = document.querySelector('nav div div:nth-child(2)');
+        
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('items-start');
+            nav.classList.toggle('space-y-4');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<a href="/blog/${post._id}"><h2 class="text-4xl font-bold mb-4 leading-tight">${post.title}</h2></a>

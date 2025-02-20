@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Modern Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full bg-white z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="text-3xl font-bold">W.</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">New</a>
+                    <a href="blogs.html" class="text-gray-900 font-semibold">Blogs</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Trending</a>
+                    <a href="categories.html" class="text-gray-600 hover:text-gray-900">Categories</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-6xl font-bold mb-6 tracking-tight">Our Blog Posts</h1>
+            <p class="text-2xl text-gray-600 max-w-3xl">Discover the latest insights, tutorials, and thought pieces from our expert writers.</p>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap gap-4 mb-12 items-center justify-between">
+                <div class="flex gap-4">
+                    <button class="px-6 py-3 bg-gray-900 text-white text-lg font-bold tab-button active" data-tab="all">All Posts</button>
+                    <button class="px-6 py-3 bg-white text-gray-600 text-lg font-bold hover:bg-gray-100 tab-button" data-tab="latest">Latest</button>
+                    <button class="px-6 py-3 bg-white text-gray-600 text-lg font-bold hover:bg-gray-100 tab-button" data-tab="popular">Popular</button>
+                </div>
+                <div class="relative">
+                    <input type="search" id="searchInput" placeholder="Search posts..." class="pl-10 pr-4 py-3 border-2 border-gray-300 text-lg w-72">
+                    <svg class="w-6 h-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div id="blogGrid" class="grid md:grid-cols-2 gap-12">
+                <!-- Blog posts will be dynamically inserted here -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-16 gap-2" id="pagination">
+                <!-- Pagination buttons will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-bold mb-6">Subscribe to our newsletter</h4>
+                    <form class="flex gap-4">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 text-lg border-2 border-gray-300">
+                        <button type="submit" class="px-8 py-3 bg-gray-900 text-white text-lg font-bold hover:bg-gray-800">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="md:text-right">
+                    <div class="flex md:justify-end gap-8 mb-8">
+                        <a href="#" class="text-xl hover:text-gray-600">Twitter</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Facebook</a>
+                        <a href="#" class="text-xl hover:text-gray-600">Instagram</a>
+                    </div>
+                    <p class="text-lg text-gray-600">&copy; 2024 Modern Blog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile menu toggle
+    const menuButton = document.querySelector('button');
+    const nav = document.querySelector('nav div div:nth-child(2)');
+    
+    menuButton.addEventListener('click', () => {
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('absolute');
+        nav.classList.toggle('top-16');
+        nav.classList.toggle('left-0');
+        nav.classList.toggle('right-0');
+        nav.classList.toggle('bg-white');
+        nav.classList.toggle('p-4');
+        nav.classList.toggle('flex');
+        nav.classList.toggle('flex-col');
+        nav.classList.toggle('items-start');
+        nav.classList.toggle('space-y-4');
+    });
+
+    // Blog posts data
+    const blogPosts = [
+        {
+            title: "The Future of Decentralized Web",
+            excerpt: "Exploring the possibilities and challenges of Web 3.0 technology and its impact on the future of the internet.",
+            author: "John Doe",
+            readTime: "5 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-05-15",
+            category: "Technology"
+        },
+        {
+            title: "AI in Modern Development",
+            excerpt: "How artificial intelligence is reshaping software development and transforming the tech industry landscape.",
+            author: "Jane Smith",
+            readTime: "8 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-05-10",
+            category: "AI"
+        },
+        {
+            title: "The Rise of No-Code Platforms",
+            excerpt: "Exploring how no-code solutions are democratizing app development and empowering non-technical creators.",
+            author: "Alex Johnson",
+            readTime: "6 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-05-05",
+            category: "Development"
+        },
+        {
+            title: "Cybersecurity in the IoT Era",
+            excerpt: "Addressing the unique challenges and solutions for securing the growing Internet of Things ecosystem.",
+            author: "Emily Chen",
+            readTime: "7 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-04-30",
+            category: "Security"
+        },
+        {
+            title: "The Impact of 5G on Mobile Development",
+            excerpt: "How the next generation of mobile networks is changing the landscape of app development and user experiences.",
+            author: "Michael Brown",
+            readTime: "6 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-04-25",
+            category: "Mobile"
+        },
+        {
+            title: "Sustainable Tech: Green Computing Practices",
+            excerpt: "Exploring eco-friendly approaches to software development and IT infrastructure management.",
+            author: "Sarah Green",
+            readTime: "5 min read",
+            image: "/placeholder.svg?height=600&width=800",
+            date: "2024-04-20",
+            category: "Sustainability"
+        }
+    ];
+
+    // Function to render blog posts
+    function renderBlogPosts(posts) {
+        const blogGrid = document.getElementById('blogGrid');
+        blogGrid.innerHTML = '';
+        posts.forEach(post => {
+            const article = document.createElement('article');
+            article.className = 'blog-card';
+            article.innerHTML = `
+                <img src="${post.image}" alt="${post.title}" class="w-full h-96 object-cover mb-6">
+                <h2 class="text-4xl font-bold mb-4 leading-tight">${post.title}</h2>
+                <p class="text-xl text-gray-600 mb-4">${post.excerpt}</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="/placeholder.svg?height=80&width=80" alt="${post.author}" class="w-12 h-12 rounded-full">
+                        <span class="text-lg">${post.author}</span>
+                    </div>
+                    <span class="text-lg text-gray-500">${post.readTime}</span>
+                </div>
+            `;
+            blogGrid.appendChild(article);
+        });
+    }
+
+    // Function to render pagination
+    function renderPagination(currentPage, totalPages) {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+        
+        const prevButton = document.createElement('button');
+        prevButton.textContent = '← Previous';
+        prevButton.className = 'px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => changePage(currentPage - 1));
+        pagination.appendChild(prevButton);
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.className = i === currentPage
+                ? 'px-6 py-3 bg-gray-900 text-white text-lg font-bold'
+                : 'px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100';
+            pageButton.addEventListener('click', () => changePage(i));
+            pagination.appendChild(pageButton);
+        }
+
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next →';
+        nextButton.className = 'px-6 py-3 border-2 text-lg font-bold hover:bg-gray-100';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => changePage(currentPage + 1));
+        pagination.appendChild(nextButton);
+    }
+
+    // Function to change page
+    function changePage(page) {
+        currentPage = page;
+        const start = (page - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const paginatedPosts = filteredPosts.slice(start, end);
+        renderBlogPosts(paginatedPosts);
+        renderPagination(currentPage, Math.ceil(filteredPosts.length / postsPerPage));
+    }
+
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    let currentTab = 'all';
+    let filteredPosts = [...blogPosts];
+    let currentPage = 1;
+    const postsPerPage = 4;
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach(btn => {
+                btn.classList.remove('bg-gray-900', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-600');
+            });
+            button.classList.remove('bg-white', 'text-gray-600');
+            button.classList.add('bg-gray-900', 'text-white');
+            currentTab = button.dataset.tab;
+            filterPosts();
+        });
+    });
+
+    function filterPosts() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        switch (currentTab) {
+            case 'latest':
+                filteredPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+                break;
+            case 'popular':
+                filteredPosts = [...blogPosts].sort((a, b) => parseInt(b.readTime) - parseInt(a.readTime));
+                break;
+            default:
+                filteredPosts = [...blogPosts];
+        }
+        filteredPosts = filteredPosts.filter(post => 
+            post.title.toLowerCase().includes(searchTerm) || 
+            post.excerpt.toLowerCase().includes(searchTerm) ||
+            post.author.toLowerCase().includes(searchTerm) ||
+            post.category.toLowerCase().includes(searchTerm)
+        );
+        currentPage = 1;
+        changePage(1);
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', filterPosts);
+
+    // Initial render
+    filterPosts();
+    </script>
+</body>
+</html>
+
